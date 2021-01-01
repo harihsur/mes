@@ -10,7 +10,8 @@
     "cognito4f60af93": {
       "service": "Cognito",
       "serviceType": "managed",
-      "providerPlugin": "awscloudformation"
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
     }
   },
   "api": {

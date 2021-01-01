@@ -1,6 +1,4 @@
 {
-    "identityPoolName": "mes_identitypool_6fdc7ac9",
-    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "mes6fdc7ac9",
     "userPoolName": "mes_userpool_6fdc7ac9",
     "autoVerifiedAttributes": [
@@ -23,14 +21,20 @@
     "userpoolClientGenerateSecret": true,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
+        "address",
+        "name",
+        "profile",
         "email"
     ],
     "userpoolClientReadAttributes": [
-        "email"
+        "address",
+        "email",
+        "name",
+        "profile"
     ],
     "userpoolClientLambdaRole": "mes6fdc7ac9_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
-    "authSelections": "identityPoolAndUserPool",
+    "userpoolClientSetAttributes": true,
+    "authSelections": "userPoolOnly",
     "resourceName": "cognito4f60af93",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -43,5 +47,17 @@
             "UnauthRole",
             "Arn"
         ]
-    }
+    },
+    "useDefault": "manual",
+    "userPoolGroups": false,
+    "adminQueries": true,
+    "triggers": "{}",
+    "hostedUI": false,
+    "userPoolGroupList": [],
+    "serviceName": "Cognito",
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": [],
+    "dependsOn": []
 }
