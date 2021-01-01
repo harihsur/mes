@@ -1,0 +1,42 @@
+{
+    "paths": [
+        {
+            "name": "/user/{id}",
+            "lambdaFunction": "retriveUser",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/user/*"
+        }
+    ],
+    "resourceName": "apib970b207",
+    "apiName": "apib970b207",
+    "functionArns": [
+        {
+            "lambdaFunction": "retriveUser"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-mes-dev-101638-authRole",
+        "unAuthRoleName": "amplify-mes-dev-101638-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "retriveUser",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
