@@ -3,6 +3,8 @@ import Amplify from "aws-amplify";
 import {AmplifyAuthenticator, AmplifySignUp, AmplifySignIn, AmplifySignOut, AmplifyGreetings} from "@aws-amplify/ui-react";
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import awsconfig from "./aws-exports";
+import Nav from 'react-bootstrap/Nav';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 Amplify.configure(awsconfig);
 
@@ -21,6 +23,19 @@ const App = () => {
   return authState === AuthState.SignedIn && user ? (
       <div className="App" style={{background: 'red', color: 'blue'}}>
         <AmplifyGreetings username={user.username}></AmplifyGreetings>
+        <Nav variant="pills" defaultActiveKey="/home">
+          <Nav.Item>
+            <Nav.Link href="/home">Active</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="link-1">Option 2</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey="disabled" disabled>
+              Disabled
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
       </div>
     ) : (
     <AmplifyAuthenticator usernameAlias="email">
